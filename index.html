@@ -4,12 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <!-- HEADER -->
     <header>
-      <nav class="bg-black border-gray-200 px-4 lg:px-6 py-2.5">
+      <nav
+        class="lg:absolute lg:top-0 z-10 w-full bg-black border-gray-200 px-4 lg:px-6 py-2.5"
+      >
         <div
           class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl"
         >
@@ -25,7 +35,7 @@
             id="mobile-menu-2"
           >
             <ul
-              class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0"
+              class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 uppercase"
             >
               <li>
                 <a
@@ -70,11 +80,13 @@
 
     <main class="bg-black relative">
       <!-- hero -->
-      <section class="grid grid-cols-2 h-screen">
-        <article class="flex flex-col items-center justify-center px-[5rem]">
+      <section class="grid lg:grid-cols-2 h-screen">
+        <article
+          class="flex flex-col items-center justify-center px-[1rem] sm:px-[5rem]"
+        >
           <header class="flex flex-col gap-8">
-            <h1 class="text-6xl font-bold text-white">INSOMNIO</h1>
-            <p class="text-white text-">
+            <h1 class="text-5xl lg:text-6xl font-bold text-white">INSOMNIO</h1>
+            <p class="text-gray-300">
               Insomnio es una tienda de ropa que captura la esencia de la moda
               contemporánea, ofreciendo prendas únicas y atrevidas para aquellos
               que buscan destacar. Nuestra colección está diseñada para quienes
@@ -97,34 +109,95 @@
           </header>
         </article>
         <article class="flex justify-center items-center">
-          <img class="w-[70%]" src="sudadera.png" alt="Sudadera INSOMNIO" />
+          <img
+            class="w-[90%] md:w-[70%] lg:w-full"
+            src="./img/sudadera_insomnio.png"
+            alt="Sudadera INSOMNIO"
+          />
         </article>
       </section>
 
       <!-- ROPA -->
-      <section class="mt-[12rem] ropa-section h-screen">
+      <section class="mt-[8rem] md:mt-[12rem] ropa-section h-[60vh] sm:h-screen">
         <header class="text-center">
           <h2 class="text-4xl font-bold text-white uppercase">Ropa</h2>
         </header>
-        <article></article>
+        <article>
+          <!-- Swiper -->
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <p class="text-white font-semibold">ROTO</p>
+                <img src="./img/playera2.png" />
+              </div>
+              <div class="swiper-slide">
+                <p class="text-white font-semibold">ROTO</p>
+                <img src="./img/playera1.png" />
+              </div>
+              <div class="swiper-slide">
+                <p class="text-white font-semibold">ESTRELLA</p>
+                <img src="./img/playera2.png" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/playera1.png" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/playera2.png" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/playera1.png" />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+          <!-- Swiper JS -->
+          <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+          <!-- Initialize Swiper -->
+          <script>
+            var swiper = new Swiper(".mySwiper", {
+              effect: "coverflow",
+              grabCursor: true,
+              centeredSlides: true,
+              slidesPerView: 3,
+              coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: false,
+              },
+              pagination: {
+                el: ".swiper-pagination",
+              },
+            });
+          </script>
+        </article>
       </section>
 
-      <section class="bg-white h-screen grid grid-cols-2 gap-6">
-        <article class="grid grid-cols-3 py-[7rem] pl-[7rem]">
+      <!-- DETALLE -->
+      <section
+        class="bg-white grid lg:grid-cols-2 gap-6 px-[1rem] sm:px-[5rem]"
+      >
+        <article class="grid grid-cols-3 lg:py-[7rem] xl:pl-[7rem]">
           <div class="row-span-3 col-span-3 flex justify-center">
-            <img class="w-[60%]" src="sudadera.png" alt="" />
+            <img class=" " src="./img/modelo3.png" alt="Playera Moy Enfrenre" />
           </div>
           <div>
-            <img src="sudadera.png" alt="" />
+            <img src="./img/modelo4.png" alt="Playera Moy Derecha" />
           </div>
           <div>
-            <img src="sudadera.png" alt="" />
+            <img src="./img/modelo1.png" alt="Playera Moy Trasera" />
           </div>
           <div>
-            <img src="sudadera.png" alt="" />
+            <img src="./img/modelo2.png" alt="Playera Moy Espalda" />
           </div>
         </article>
-        <article class="py-[7rem] pr-[7rem] flex flex-col justify-between">
+
+        <article
+          class="lg:py-[7rem] xl:pr-[7rem] flex flex-col justify-between"
+        >
           <div>
             <p class="font-semibold text-xs text-gray-600 mb-1">T-SHIRT</p>
             <h3 class="font-bold text-xl">MOY</h3>
@@ -134,7 +207,7 @@
             <p class="font-bold text-xl">250$</p>
           </div>
 
-          <div class="flex gap-5 items-end my-4">
+          <div class="flex gap-2 items-end my-4">
             <p class="font-semibold">4.5/5</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -233,7 +306,7 @@
             <u class="text-sm font-semibold">Más Tallas</u>
           </div>
 
-          <div class="flex flex-col gap-2">
+          <div class="flex flex-col gap-2 mt-3">
             <button class="bg-black text-white uppercase py-3 font-medium">
               Comprar
             </button>
@@ -244,17 +317,18 @@
         </article>
       </section>
 
-      
-      <section class="media-noche h-screen grid grid-cols-2">
-        <article class="flex flex-col justify-center p-[5rem]">
+      <!-- MEDIA NOCHE -->
+      <section
+        class="media-noche lg:h-screen grid lg:grid-cols-2 pt-[10rem] lg:pt-0 pb-[10rem] sm:px-[5rem]"
+      >
+        <article class="flex flex-col justify-center px-[1rem]">
           <header>
-            <h1 class="text-6xl font-bold">Media Noche</h1>
-            <p class="mt-3 text-lg w-[26rem] font-semibold">
-                Primer Álbum de larga duración dentro de la
-                discografía de Zax, contiene ritmos de R&B, temas
-                de Trap y Sonidos Alternativos de la escena urbana
-                mexicana directamente desde un insomnio de
-                media noche.
+            <h1 class="text-4xl lg:text-6xl font-bold">Media Noche</h1>
+            <p class="mt-3 lg:text-lg lg:w-[26rem] font-semibold">
+              Primer Álbum de larga duración dentro de la discografía de Zax,
+              contiene ritmos de R&B, temas de Trap y Sonidos Alternativos de la
+              escena urbana mexicana directamente desde un insomnio de media
+              noche.
             </p>
           </header>
 
@@ -272,29 +346,34 @@
             </ul>
           </div>
         </article>
-        <article class="flex items-center">
-            <img  class="w-[80%]" src="sudadera.png" alt="">
+        <article
+          class="mt-12 relative flex flex-col items-center justify-center px-[1rem] md:px-0 md:w-[80%] xl:w-[65%] md:mx-auto"
+        >
+          <img class="w-full" src="./img/cd.png" alt="CD Media Noche" />
+          <div class="flex flex-col gap-2 mt-3 w-full">
+            <button class="bg-black text-gray-300 uppercase py-3 font-medium">
+              Comprar
+            </button>
+            <button
+              class="border-2 text-white border-white uppercase py-3 font-medium"
+            >
+              Bolsa
+            </button>
+          </div>
         </article>
       </section>
 
-      <footer class="absolute w-full bottom-0 flex gap-2 p-6 ">
-        <div class="w-[3rem] bg-white h-[2rem] rounded-md">
-
-        </div>
+      <footer class="absolute w-full bottom-0 flex gap-2 p-6">
+        <div class="w-[3rem] bg-white h-[2rem] rounded-md"></div>
         <div>
-            <p class="font-medium text-sm text-white">ZAX</p>
-            <p class="text-white text-xs mb-2 font-light">Marca de ropa</p>
-            <div class="flex gap-2">
-                <div class="w-[3rem] h-[1rem] bg-white rounded-md">
-
-                </div>
-                <div class="w-[3rem] h-[1rem] bg-white rounded-md">
-
-                </div>
-            </div>
+          <p class="font-medium text-sm text-white">ZAX</p>
+          <p class="text-white text-xs mb-2 font-light">Marca de ropa</p>
+          <div class="flex gap-2">
+            <div class="w-[3rem] h-[1rem] bg-white rounded-md"></div>
+            <div class="w-[3rem] h-[1rem] bg-white rounded-md"></div>
+          </div>
         </div>
       </footer>
-
     </main>
   </body>
 </html>

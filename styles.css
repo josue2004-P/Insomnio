@@ -1,3 +1,9 @@
+  * {
+    font-family: "DM Sans", sans-serif;
+
+  }
+  
+
 .ropa-section {
   background: #16222a; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -26,3 +32,42 @@
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
   
+  .swiper {
+    width: 100%;
+    height: 40vh;
+  }
+
+  @media (min-width: 640px) { 
+    .swiper {
+      height: 60vh;
+    }
+  }
+
+  @media (min-width: 768px) { 
+    .swiper {
+      height: 70vh;
+    }
+  }
+
+  @media (min-width: 1024px) { 
+    .swiper {
+      height: 70vh;
+    }
+  }
+
+  .swiper-slide {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    width: 20rem;
+  }
+
+  .swiper-button-next{
+    color: rebeccapurple;
+
+  }
